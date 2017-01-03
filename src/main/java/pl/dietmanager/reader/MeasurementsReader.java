@@ -1,4 +1,4 @@
-package pl.dietmanager.data;
+package pl.dietmanager.reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

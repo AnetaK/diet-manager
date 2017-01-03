@@ -1,4 +1,4 @@
-package pl.dietmanager.data;
+package pl.dietmanager.reader;
 
 import org.junit.Test;
 
