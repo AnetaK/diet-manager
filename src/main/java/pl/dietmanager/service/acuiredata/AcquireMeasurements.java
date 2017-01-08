@@ -11,16 +11,19 @@ import java.util.List;
 
 public class AcquireMeasurements {
     private static final String STRING_PATH_TO_FILE = "src/main/resources/Measurements.csv";
+MeasurementsReader measurementsReader;
+
+    public AcquireMeasurements(MeasurementsReader measurementsReader) {
+        this.measurementsReader = measurementsReader;
+    }
 
     public List<Measurements> acquireMeasurements(){
-        MeasurementsReader measurementsReader = new MeasurementsReader();
         List<String> strings = measurementsReader.readFromFile(STRING_PATH_TO_FILE);
+        System.out.println("strings.size() = " + strings.size());
         List<Measurements> measurements = new ArrayList<Measurements>();
         int i=0;
         for (String s :
                 strings) {
-            if(i==0){i++;}
-            else{
                 System.out.println("s = " + s);
                 String[] split = s.split(";");
                 Measurements measurement = new MeasurementsBuilder().withPerson(split[0])
@@ -41,9 +44,7 @@ public class AcquireMeasurements {
                         .withWrist(new BigDecimal(split[15]))
                         .build();
                 measurements.add(measurement);
-
-            }
-        }
+      }
         return measurements;
 
     }
