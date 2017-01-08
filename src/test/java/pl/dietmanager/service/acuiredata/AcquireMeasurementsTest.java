@@ -38,11 +38,11 @@ public class AcquireMeasurementsTest {
     public void should_return_5_records() {
 
         Mockito.when(reader.readFromFile(anyString())).thenReturn(Arrays.asList(
-                "Person1;2017-01-01;85.5;100;95;95;125;117;127;70;65;61;50;45;38;37;17",
-                "Person1;2017-01-10;84;99;94;94;120;112;125;68;64;60;49;44;37.5;36;16.5",
-                "Person2;2017-01-01;75;85;80;85;110;100;115;65;60;55;45;43;37;35;16",
-                "Person1;2017-01-15;83.5;98;94;93;115;110;122;67;63;59;48;40;36;35;16",
-                "Person2;2017-01-10;74;97;79;84;108;95;112;64;59;54;43;39;35;34;16"
+                "Person1;2017-01-01;85.5;100;95;95;125;117;127;70;65;61;50;45;25;38;37;17",
+                "Person1;2017-01-10;84;99;94;94;120;112;125;68;64;60;49;44;25;37.5;36;16.5",
+                "Person2;2017-01-01;75;85;80;85;110;100;115;65;60;55;45;43;25;37;35;16",
+                "Person1;2017-01-15;83.5;98;94;93;115;110;122;67;63;59;48;40;25;36;35;16",
+                "Person2;2017-01-10;74;97;79;84;108;95;112;64;59;54;43;39;25;35;34;16"
         ));
 
 
@@ -53,6 +53,7 @@ public class AcquireMeasurementsTest {
         assertThat(measurements.get(1).getPerson(), is(equalTo("Person1")));
         assertThat(measurements.get(4).getPerson(), is(equalTo("Person2")));
         assertThat(measurements.get(4).getWeight(), is(equalTo(new BigDecimal(74))));
+        assertThat(measurements.get(4).getWrist(), is(equalTo(new BigDecimal(16))));
 
     }
 }

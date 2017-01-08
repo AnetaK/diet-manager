@@ -18,6 +18,7 @@ public class MeasurementsBuilder {
     private BigDecimal thighLowest;
     private BigDecimal calfBelowKnee;
     private BigDecimal calf;
+    private BigDecimal ankle;
     private BigDecimal armByShoulder;
     private BigDecimal arm;
     private BigDecimal wrist;
@@ -92,6 +93,11 @@ public class MeasurementsBuilder {
         return this;
     }
 
+    public MeasurementsBuilder withAnkle(BigDecimal ankle) {
+        this.ankle = ankle;
+        return this;
+    }
+
     public MeasurementsBuilder withArmByShoulder(BigDecimal armByShoulder) {
         this.armByShoulder = armByShoulder;
         return this;
@@ -108,6 +114,6 @@ public class MeasurementsBuilder {
     }
 
     public pl.dietmanager.model.Measurements build() {
-        return new pl.dietmanager.model.Measurements(person, date, weight, bust, underTheBust, waistLowest, waistLargest, waistAboveHips, hip, thighLargest, thigh, thighLowest, calfBelowKnee, calf, armByShoulder, arm, wrist);
+        return new pl.dietmanager.model.Measurements(person, date, weight, bust, underTheBust, waistLowest, waistLargest, waistAboveHips, hip, thighLargest, thigh, thighLowest, calfBelowKnee, calf, ankle, armByShoulder, arm, wrist);
     }
 }

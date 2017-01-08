@@ -18,10 +18,14 @@ public class Measurements {
     private BigDecimal thighLowest;
     private BigDecimal calfBelowKnee;
     private BigDecimal calf;
+    private BigDecimal ankle;
     private BigDecimal armByShoulder;
     private BigDecimal arm;
     private BigDecimal wrist;
 
+    public BigDecimal getAnkle() {
+        return ankle;
+    }
     public String getPerson() {
         return person;
     }
@@ -93,7 +97,7 @@ public class Measurements {
     public Measurements() {
     }
 
-    public Measurements(String person, LocalDate date, BigDecimal weight, BigDecimal bust, BigDecimal underTheBust, BigDecimal waistLowest, BigDecimal waistLargest, BigDecimal waistAboveHips, BigDecimal hip, BigDecimal thighLargest, BigDecimal thigh, BigDecimal thighLowest, BigDecimal calfBelowKnee, BigDecimal calf, BigDecimal armByShoulder, BigDecimal arm, BigDecimal wrist) {
+    public Measurements(String person, LocalDate date, BigDecimal weight, BigDecimal bust, BigDecimal underTheBust, BigDecimal waistLowest, BigDecimal waistLargest, BigDecimal waistAboveHips, BigDecimal hip, BigDecimal thighLargest, BigDecimal thigh, BigDecimal thighLowest, BigDecimal calfBelowKnee, BigDecimal calf, BigDecimal ankle, BigDecimal armByShoulder, BigDecimal arm, BigDecimal wrist) {
         this.person = person;
         this.date = date;
         this.weight = weight;
@@ -108,6 +112,7 @@ public class Measurements {
         this.thighLowest = thighLowest;
         this.calfBelowKnee = calfBelowKnee;
         this.calf = calf;
+        this.ankle = ankle;
         this.armByShoulder = armByShoulder;
         this.arm = arm;
         this.wrist = wrist;
@@ -130,6 +135,7 @@ public class Measurements {
                 ", thighLowest=" + thighLowest +
                 ", calfBelowKnee=" + calfBelowKnee +
                 ", calf=" + calf +
+                ", ankle=" + ankle +
                 ", armByShoulder=" + armByShoulder +
                 ", arm=" + arm +
                 ", wrist=" + wrist +

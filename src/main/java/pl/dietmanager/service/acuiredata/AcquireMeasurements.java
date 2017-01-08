@@ -4,11 +4,13 @@ import pl.dietmanager.model.Measurements;
 import pl.dietmanager.model.MeasurementsBuilder;
 import pl.dietmanager.reader.MeasurementsReader;
 
+import javax.ejb.Startup;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Startup
 public class AcquireMeasurements {
     private static final String STRING_PATH_TO_FILE = "src/main/resources/Measurements.csv";
 MeasurementsReader measurementsReader;
@@ -34,14 +36,16 @@ MeasurementsReader measurementsReader;
                         .withWaistLowest(new BigDecimal(split[5]))
                         .withWaistLargest(new BigDecimal(split[6]))
                         .withWaistAboveHips(new BigDecimal(split[7]))
-                        .withThighLargest(new BigDecimal(split[8]))
-                        .withThigh(new BigDecimal(split[9]))
-                        .withThighLowest(new BigDecimal(split[10]))
-                        .withCalfBelowKnee(new BigDecimal(split[11]))
-                        .withCalf(new BigDecimal(split[12]))
-                        .withArmByShoulder(new BigDecimal(split[13]))
-                        .withArm(new BigDecimal(split[14]))
-                        .withWrist(new BigDecimal(split[15]))
+                        .withHip(new BigDecimal(split[8]))
+                        .withThighLargest(new BigDecimal(split[9]))
+                        .withThigh(new BigDecimal(split[10]))
+                        .withThighLowest(new BigDecimal(split[11]))
+                        .withCalfBelowKnee(new BigDecimal(split[12]))
+                        .withCalf(new BigDecimal(split[13]))
+                        .withAnkle(new BigDecimal(split[14]))
+                        .withArmByShoulder(new BigDecimal(split[15]))
+                        .withArm(new BigDecimal(split[16]))
+                        .withWrist(new BigDecimal(split[17]))
                         .build();
                 measurements.add(measurement);
       }
