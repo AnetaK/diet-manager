@@ -9,12 +9,13 @@
     <c:out>Login</c:out> <input type="text" name="name"/> <br>
     <c:out>Data</c:out> <input type="text" name="date"/> <br>
     <c:out>Wzrost</c:out> <input type="text" name="height"/> <br>
+    <c:out>Waga</c:out> <input type="text" name="weight"/> <br>
     <c:out>Obwód klatki piersiowej</c:out> <input type="text" name="bust"/> <br>
     <c:out>Obwód pod biustem</c:out> <input type="text" name="underBust"/> <br>
     <c:out>Obwód talii</c:out> <input type="text" name="waistLowest"/> <br>
     <c:out>Obwód brzucha (możliwie największy)</c:out> <input type="text" name="waistLargest"/> <br>
     <c:out>Obwód brzucha nad biodrami</c:out> <input type="text" name="waistAboveHips"/> <br>
-    <c:out>Obwód bioder</c:out> <input type="text" name="hips"/> <br>
+    <c:out>Obwód bioder</c:out> <input type="text" name="hip"/> <br>
     <c:out>Obwód uda (możliwie największy)</c:out> <input type="text" name="thighLargest"/> <br>
     <c:out>Obwód uda (w połowie)</c:out> <input type="text" name="thigh"/> <br>
     <c:out>Obwód uda (nad kolanem)</c:out> <input type="text" name="thighLowest"/> <br>
