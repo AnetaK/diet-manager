@@ -6,6 +6,7 @@ import java.time.LocalDate;
 public class MeasurementsBuilder {
     private String person;
     private LocalDate date;
+    private BigDecimal height;
     private BigDecimal weight;
     private BigDecimal bust;
     private BigDecimal underTheBust;
@@ -30,6 +31,11 @@ public class MeasurementsBuilder {
 
     public MeasurementsBuilder withDate(LocalDate date) {
         this.date = date;
+        return this;
+    }
+
+    public MeasurementsBuilder withHeight(BigDecimal height) {
+        this.height = height;
         return this;
     }
 
@@ -114,6 +120,6 @@ public class MeasurementsBuilder {
     }
 
     public pl.dietmanager.model.Measurements build() {
-        return new pl.dietmanager.model.Measurements(person, date, weight, bust, underTheBust, waistLowest, waistLargest, waistAboveHips, hip, thighLargest, thigh, thighLowest, calfBelowKnee, calf, ankle, armByShoulder, arm, wrist);
+        return new pl.dietmanager.model.Measurements(person, date, height, weight, bust, underTheBust, waistLowest, waistLargest, waistAboveHips, hip, thighLargest, thigh, thighLowest, calfBelowKnee, calf, ankle, armByShoulder, arm, wrist);
     }
 }

@@ -9,6 +9,18 @@
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
@@ -20,14 +32,56 @@
             <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-        </dependency>
+
 
     </dependencies>
     <build>
         <finalName>diet-manager</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.1.0.Alpha7</version>
+                <configuration>
+                    <username>${wildfly.adminusername}</username>
+                    <password>${wildfly.adminpassword}</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>wildfly-start</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>wildfly-stop</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>shutdown</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+        </plugins>
     </build>
+
+    <properties>
+        <wildfly.adminusername>admin</wildfly.adminusername>
+        <wildfly.adminpassword>admin</wildfly.adminpassword>
+        <wildfly.add-user>${wildfly.adminusername}:${wildfly.adminpassword}:group:ManagementRealm:false</wildfly.add-user>
+    </properties>
+
 </project>
