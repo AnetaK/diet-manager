@@ -1,5 +1,6 @@
 package pl.dietmanager.servlet;
 
+import pl.dietmanager.file.Writer;
 import pl.dietmanager.model.Measurements;
 import pl.dietmanager.model.MeasurementsBuilder;
 
@@ -14,9 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 @WebServlet(urlPatterns = "/measurements")
 public class AccuireMeasurementsServlet extends HttpServlet {
+    private static final String PATH_TO_FILE = "src/main/resources/Measurements.csv";
 
 //    @PersistenceUnit
 //    EntityManager em;
@@ -46,6 +49,10 @@ public class AccuireMeasurementsServlet extends HttpServlet {
                 .build();
 
         System.out.println("measurements.toString() = " + measurements.toString());
+
+        Writer writer = new Writer();
+        writer.writeToFile(PATH_TO_FILE, Arrays.asList(measurements));
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("Measurements.jsp");
         dispatcher.forward(request, response);
     }

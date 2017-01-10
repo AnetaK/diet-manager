@@ -1,1 +1,4 @@
 person;date;height;weight;bust;underTheBust;waistLowest;waistLargest;waistAboveHips;hip;thighLargest;thigh;thighLowest;calfBelowKnee;calf;ankle;armByShoulder;arm;wrist
+person3;2017-01-10;85;85;80;80;3;4;5;6;7;8;9;10;11;12;13;14;15
+person3;2017-01-10;85;85;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15
+person3;2017-01-10;185;85;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15

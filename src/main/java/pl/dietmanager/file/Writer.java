@@ -13,7 +13,7 @@ public class Writer {
             writer = new FileWriter(path, true);
             for (Measurements m :
                     measurements) {
-                writer.write(m.toString().replace("[","").replace("]","") + "\r\n");
+                writer.write("\r\n"+m.toString().replace("[","").replace("]","") );
                 writer.flush();
             }
 

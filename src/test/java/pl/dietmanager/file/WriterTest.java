@@ -36,8 +36,8 @@ public class WriterTest {
         FileReader fileReader = new FileReader();
         List<String> result = fileReader.readFromFile(PATH_TO_FILE);
 
-        assertThat(result.size(),is(equalTo(4)));
-        assertThat(result.get(3),is(equalTo("test;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;1")));
+        assertThat(result.size(),is(equalTo(5)));
+        assertThat(result.get(4),is(equalTo("test;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;null;1")));
 
         //clear test file
         File file = new File(PATH_TO_FILE);
