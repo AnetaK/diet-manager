@@ -2,7 +2,7 @@ package pl.dietmanager.service.acuire;
 
 import pl.dietmanager.model.Measurements;
 import pl.dietmanager.model.MeasurementsBuilder;
-import pl.dietmanager.reader.MeasurementsReader;
+import pl.dietmanager.file.FileReader;
 
 import javax.ejb.Startup;
 import java.math.BigDecimal;
@@ -13,14 +13,14 @@ import java.util.List;
 @Startup
 public class AcquireMeasurements {
     private static final String STRING_PATH_TO_FILE = "src/main/resources/Measurements.csv";
-MeasurementsReader measurementsReader;
+FileReader fileReader;
 
-    public AcquireMeasurements(MeasurementsReader measurementsReader) {
-        this.measurementsReader = measurementsReader;
+    public AcquireMeasurements(FileReader fileReader) {
+        this.fileReader = fileReader;
     }
 
     public List<Measurements> acquireMeasurements(){
-        List<String> strings = measurementsReader.readFromFile(STRING_PATH_TO_FILE);
+        List<String> strings = fileReader.readFromFile(STRING_PATH_TO_FILE);
         System.out.println("strings.size() = " + strings.size());
         List<Measurements> measurements = new ArrayList<Measurements>();
         int i=0;

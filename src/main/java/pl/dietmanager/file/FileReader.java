@@ -1,16 +1,15 @@
-package pl.dietmanager.reader;
+package pl.dietmanager.file;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeasurementsReader {
+public class FileReader {
     public List<String> readFromFile(String path){
         List<String> lines = new ArrayList<String>();
         String line = "";
         try{
-            BufferedReader br = new BufferedReader(new FileReader(path));
+            BufferedReader br = new BufferedReader(new java.io.FileReader(path));
             while ((line = br.readLine()) != null ) {
                 lines.add(line);
             }

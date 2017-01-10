@@ -3,6 +3,8 @@ package pl.dietmanager.servlet;
 import pl.dietmanager.model.Measurements;
 import pl.dietmanager.model.MeasurementsBuilder;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,9 +18,11 @@ import java.time.LocalDate;
 @WebServlet(urlPatterns = "/measurements")
 public class AccuireMeasurementsServlet extends HttpServlet {
 
+//    @PersistenceUnit
+//    EntityManager em;
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Measurements measurements = new MeasurementsBuilder()
                 .withPerson(request.getParameter("name"))
                 .withDate(LocalDate.parse(request.getParameter("date")))
@@ -45,8 +49,9 @@ public class AccuireMeasurementsServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("Measurements.jsp");
         dispatcher.forward(request, response);
     }
+
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("Measurements.jsp");
         dispatcher.forward(request, response);

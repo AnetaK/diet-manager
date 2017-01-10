@@ -104,27 +104,26 @@ public class Measurements {
 
     @Override
     public String toString() {
-        return "Measurements{" +
-                "person='" + person + '\'' +
-                ", date=" + date +
-                ", height=" + height +
-                ", weight=" + weight +
-                ", bust=" + bust +
-                ", underTheBust=" + underTheBust +
-                ", waistLowest=" + waistLowest +
-                ", waistLargest=" + waistLargest +
-                ", waistAboveHips=" + waistAboveHips +
-                ", hip=" + hip +
-                ", thighLargest=" + thighLargest +
-                ", thigh=" + thigh +
-                ", thighLowest=" + thighLowest +
-                ", calfBelowKnee=" + calfBelowKnee +
-                ", calf=" + calf +
-                ", ankle=" + ankle +
-                ", armByShoulder=" + armByShoulder +
-                ", arm=" + arm +
-                ", wrist=" + wrist +
-                '}';
+        return
+                person + ';' +
+                date + ';' +
+                height + ';' +
+                weight + ';' +
+                bust + ';' +
+                underTheBust + ';' +
+                waistLowest + ';' +
+                waistLargest + ';' +
+                waistAboveHips + ';' +
+                hip + ';' +
+                thighLargest + ';' +
+                thigh + ';' +
+                thighLowest + ';' +
+                calfBelowKnee + ';' +
+                calf + ';' +
+                ankle + ';' +
+                armByShoulder + ';' +
+                arm + ';' +
+                wrist;
     }
 
     public Measurements(String person, LocalDate date, BigDecimal height, BigDecimal weight, BigDecimal bust, BigDecimal underTheBust, BigDecimal waistLowest, BigDecimal waistLargest, BigDecimal waistAboveHips, BigDecimal hip, BigDecimal thighLargest, BigDecimal thigh, BigDecimal thighLowest, BigDecimal calfBelowKnee, BigDecimal calf, BigDecimal ankle, BigDecimal armByShoulder, BigDecimal arm, BigDecimal wrist) {

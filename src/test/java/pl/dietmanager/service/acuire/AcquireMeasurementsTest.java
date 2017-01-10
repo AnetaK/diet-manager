@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import pl.dietmanager.model.Measurements;
-import pl.dietmanager.reader.MeasurementsReader;
+import pl.dietmanager.file.FileReader;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import static org.mockito.Matchers.anyString;
 public class AcquireMeasurementsTest {
 
     @Mock
-    MeasurementsReader reader;
+    FileReader reader;
 
 
     AcquireMeasurements acquireMeasurements;
